@@ -4,17 +4,17 @@ from torchvision.transforms import ToTensor, Normalize, Compose, Resize
 from torchvision.datasets import MNIST
 
 import matplotlib.pyplot as plt
-from PIL import Image
 
 
 class MNISTDataset(Dataset):
-    def __init__(self, train: bool = True, output_size=(227,227)) -> None:
+    def __init__(self, train: bool = True, output_size=(227, 227)) -> None:
         super(MNISTDataset, self).__init__()
         self.mnist = MNIST(
             root="data",
             train=train,
             download=True,
-            transform=Compose([Resize(output_size), ToTensor(), Normalize(mean=(0.5,), std=(0.5,))]),
+            transform=Compose([Resize(output_size), ToTensor(),
+                              Normalize(mean=(0.5,), std=(0.5,))]),
         )
 
     def __len__(self):
@@ -41,6 +41,6 @@ if __name__ == "__main__":
         print(images[i].shape, labels[i].item())
         fig.add_subplot(rows, cols, i + 1)
         plt.imshow(images[i].squeeze())
-        plt.title(labels[i].item())
+        plt.title(labels[i].item(), size=40)
 
     plt.show()

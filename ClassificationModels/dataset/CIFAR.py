@@ -19,7 +19,8 @@ class CIFARDataset(Dataset):
         )
 
     def __len__(self):
-        return len(self.cifar)
+        return 1000
+        # return len(self.cifar)
 
     def __getitem__(self, index):
         img, label = self.cifar[index]

@@ -5,7 +5,16 @@ from torchsummary import summary
 
 
 class AlexNetBlock(nn.Module):
-    def __init__(self, in_channels, out_channels, kernel_size, stride, padding, pool_and_norm: bool = True) -> None:
+    def __init__(
+        self,
+        in_channels,
+        out_channels,
+        kernel_size,
+        stride,
+        padding,
+        pool_and_norm: bool = True
+    ) -> None:
+
         super(AlexNetBlock, self).__init__()
         self.conv_layer = nn.Conv2d(
             in_channels, out_channels, kernel_size, stride, padding)

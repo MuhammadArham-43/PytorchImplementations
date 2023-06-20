@@ -13,7 +13,7 @@ from tqdm import tqdm
 
 if __name__ == "__main__":
     INPUT_SIZE = (227, 227)
-    BATCH_SIZE = 8
+    BATCH_SIZE = 16
     IN_CHANNELS = 3
     NUM_CLASSES = 10
     LEARNING_RATE = 0.01
