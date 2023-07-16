@@ -1,1 +1,4 @@
-.vscode/*
+**/data
+**/runs
+infer_result.png
+**/results
